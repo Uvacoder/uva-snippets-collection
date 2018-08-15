@@ -1,0 +1,31 @@
+Restful Routes
+
+name     url         verb     desc. 
+====================================================================================================
+Index    /dogs        GET      Display a list of all dog
+New	     /dogs/new    GET      Display form to make a new dog
+Create   /dogs		  POST     Add new dog to DB
+Show     /dogs/:id    GET      Shows info about one dog
+
+Destroy a db
+
+db.collections.drop()
+
+Rest -  a mapping between HTTP routes and CRUD
+
+Create
+Read //allBlogs
+Updated // updateBlog:id
+Destroy //deleteBlog:id
+	
+
+	Bodyparser- requires data from form
+
+The folder views is to create the header and the footer
+-----------------------
+Method-override
+Because html don´t support PUT or Delete request we have to install
+To use :
+ <form class="ui form" action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
+
+	
