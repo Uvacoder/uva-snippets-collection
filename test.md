@@ -14,3 +14,4 @@ alert(s);
         color: red;
     }
 
+</style>
