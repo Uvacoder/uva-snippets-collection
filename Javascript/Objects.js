@@ -55,3 +55,21 @@ var posts = [
 
 posts[0]. title = "cats are good"
 posts[1]. name = "Moreira"
+
+==========================================================================
+//////////////////////Methods/////////////////////////////////////////////
+========================================================================
+
+var person ={
+    name : "Chuck",
+    age: 27,
+    isCool : true,
+    friends : ["bob", "holy"],
+    add: function(X,y){
+        return x * y;
+    }
+}
+
+person.add(10,2); // to get inside the function
+//code more organize
+// we can access different functions with same name

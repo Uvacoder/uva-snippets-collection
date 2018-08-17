@@ -142,4 +142,5 @@ We can use a function:
  ======================================================================================
  //////////////////////////////Float Layouts///////////////////////////////////////////
  ======================================================================================
- 
+ The z index only works when position is different than relative
+ If the z indez is 1 and the next one is less than 1, the one that has 1 is more in foreignObject
