@@ -1,5 +1,11 @@
-    <!-- // Open the git bash in the file// -->
-    To open git bash go to the file and right click and "git bash here"
+   <h1>Git and Github</h1>
+
+
+First command we have is
+```html
+git init
+```
+That creates the repository.
 
     <!-- //Creating a file// -->
     Doing "touch" or creating in the file manager does the same.
@@ -67,3 +73,17 @@
 
 
 
+<style>
+        h1 {
+            color:blue;
+            text-align:center;
+        }
+
+        h2{
+            color:green;
+        }
+
+        h4{
+            color:red;
+        }
+</style>
