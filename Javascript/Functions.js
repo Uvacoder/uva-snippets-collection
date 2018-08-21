@@ -122,4 +122,5 @@ var expression = function(){
     console.log("hello");
 }
 //in the function expression if you name the variable diferent you lost the function
+//If it starts with the word function is always a function declaration
 

@@ -72,6 +72,22 @@ That creates the repository.
     git clone and the link you copied
 
 
+git log
+gets the log of all commits
+if you press enter goes down
+
+git checkout
+with this command and pressing the commit with it, we go back to when that commit was made and it´s created a new branch where all our files after that still don't exist
+
+git checkout master, goes back to "present".
+
+git revert --no-commit 165sdg1sg6 .. head
+
+then goes to master|reverting and where the changes after the reversion are there to be commited.
+Then we create a commit with the new changes.
+If we want to go back again we had to go to git log and do again.
+
+
 
 <style>
         h1 {

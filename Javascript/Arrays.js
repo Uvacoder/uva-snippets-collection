@@ -4,34 +4,18 @@
 ///////////////////////////////Array Methods/////////////////////////////
 ========================================================================
 
-//Add new element to a array
 
-todos.push('item4');
-console.log(todos);
-//Push add to the end of the array
-//['item1', 'item2', 'item3','item4']
 
-//Remove the last element from the array
 
-todos.pop();
-console.log(todos);
-//['item1', 'item2', 'item3']
-//Always remove the last
 
-todos.unshift('item5');
-console.log(todos);
-//Add to the beginning of the array
-//['item5',item1', 'item2', 'item3','item4']
 
-todos.shift();
-console.log(todos);
-//remove the first element of the array
-//['item1', 'item2', 'item3','item4']
 
-todos.indexOf('item1') //0
-todos.indexOf('Michael') // -1
-//If there is more than one element with the same name, 
-//it returns the first one
+
+
+
+
+
+
 
 var fruits = ['apple','orange', 'lemon','banana', 'mango']
 

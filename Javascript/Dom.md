@@ -16,7 +16,7 @@ In this example we use the property style.color to change the color.
 
 <h2>Important Selector Methods</h2>
 
-<h4>getElementById</h4>
+<h4><li>getElementById</li></h4>
 
 Takes a string argument and returns the one element with a matching ID. That element is an object
 
@@ -25,7 +25,7 @@ var tag = document.getElementById("firstOne");
 ```
 Because the Id can only occur once in the same page, it will get the element with that ID.
 
-<h4>getElementsByClassName</h4>
+<h4><li>getElementsByClassName</li></h4>
 
 Takes a string argument and returns a list of elements that have a matching class.  That list of elements is a node list.
 
@@ -33,7 +33,7 @@ Takes a string argument and returns a list of elements that have a matching clas
 var tags = document.getElementsByClassName("bolds");
 ```
 
-<h4>getElementsByTagName</h4>
+<h4><li>getElementsByTagName</li></h4>
 
 Returns a list of elements of a given tag name like `<li>` or `<h1>`. That list acts like a object
 
@@ -42,7 +42,7 @@ var tags = document.getElementsBy TagName("li");
 ```
 
 
-<h4>querySelector</h4>
+<h4><li>querySelector</li></h4>
 
 Selects the first element that it finds with the css selector chosen.Here we have to use the CSS syntax.
 
@@ -54,16 +54,50 @@ Because it selects accordingly with the css selectors is it possibly we select s
 ```javascript
 document.querySelector("li a.special")
 ```
-So all anchor tags with class special would be selected.~
+So all anchor tags with class special would be selected.
 
-<h4>querySelectorAll</h4>
+<h4><li>querySelectorAll</li></h4>
+
 
 Returns a list of elements that matches a given CSS-style selector.
 ```javascript
 document.querySelectorAll("h1")
 ```
+<h2>Events</h2>
+
+Events are notification that are sent to the code that something happened on the webpage, for example, someone click a button, scroll down, etc.
+Then the function that performs the action based on that event is called the <b>event listener</b>.It just waits for it to happen.
 
 
+<h2>Manipulation Dom</h2>
+
+```javascript
+var h1 =document.querySelector("hello");
+
+h1.style.color = "yellow";
+
+```
+This changes the h1 with the class"hello" to color "yellow". But the best it create a class in CSS and changing all elements there and then in JS we toggling to show or not show.
+
+So, for example in CSS we have:
+
+```css
+.title{
+    color:red;
+    text-align: center;
+}
+```
+And in Js
+```javascript
+var h1 = document.querySelectot("h1);
+tag.classList.add("title")
+//or
+tag.classList.remove("title")
+//or
+tag.classList.toggle("title")
+
+
+```
 
 
  <style>
@@ -80,5 +114,4 @@ document.querySelectorAll("h1")
             color:red;
         }
 
-        
 </style>
