@@ -98,6 +98,65 @@ tag.classList.toggle("title")
 
 
 ```
+<h4>textContent</h4>
+
+One important DOM manipulation is the <b>textContent</b> where it returns the string of all text contained in a given element.
+
+```javascript
+<p>This is a <strong>example</strong>text</p>
+
+tag.textContent => //This is a example text
+
+var tag = document.querySelector('p');
+tag.textContent = "blah blah blah"
+```
+But with textContent the returning HTML doens't take in consideration the HTML inside the string. In this case after using the textContent the `<strong>` is not there anymore.
+
+So to keep the HTML intact we have to use a different DOM Manipulation.
+
+<h4>innerHTML</h4>
+
+```javascript
+<p>This is a <strong>example</strong>text</p>
+
+tag.textContent => //This is a <strong>example</strong> text
+
+var tag = document.querySelector('p');
+tag.textContent = "blah blah blah"
+```
+But with the innerHTML it stills overwrite was was written the difference is that is render html tags and html tags and not in textContent.
+
+```javascript
+<p>This is a <strong>example</strong>text</p>
+
+
+
+var tag = document.querySelector('p');
+tag.textContent = "<h1>blah blah blah</h1>" 
+//<h1>blah blah blah</h1>
+
+tag.innerHTML = "<h1>blah blah blah</h1>" 
+// blah blah blah
+```
+<h4>getAttribute and setAttribute</h4>
+
+We can also manipulate attibuttes, for example <strong>href</strong> or <strong>src</strong>.
+
+```html
+<a href="www.google.com">I am a link</a>
+<img src="logo.png">
+```
+```javascript
+
+var link = document.querySelector('a');
+link.getAttribute('href'); //gets the attibute
+link.setAttribute('href','www.ebay.com');
+//Set the link of the page to go to ebay.
+
+var img = document.querySelector("img");
+img.setAttibute("srcset", "ebaylogo.png");
+
+```
 
 
  <style>
