@@ -63,10 +63,7 @@ Returns a list of elements that matches a given CSS-style selector.
 ```javascript
 document.querySelectorAll("h1")
 ```
-<h2>Events</h2>
 
-Events are notification that are sent to the code that something happened on the webpage, for example, someone click a button, scroll down, etc.
-Then the function that performs the action based on that event is called the <b>event listener</b>.It just waits for it to happen.
 
 
 <h2>Manipulation Dom</h2>
@@ -77,7 +74,7 @@ var h1 =document.querySelector("hello");
 h1.style.color = "yellow";
 
 ```
-This changes the h1 with the class"hello" to color "yellow". But the best it create a class in CSS and changing all elements there and then in JS we toggling to show or not show.
+This changes the h1 with the class`.hello` to the color yellow. But the best it create a class in CSS and changing all elements there and then in JS we toggling to show or not show.
 
 So, for example in CSS we have:
 
@@ -89,13 +86,12 @@ So, for example in CSS we have:
 ```
 And in Js
 ```javascript
-var h1 = document.querySelectot("h1);
-tag.classList.add("title")
+var h1 = document.querySelectot("h1");
+h1.classList.add("title")
 //or
-tag.classList.remove("title")
+h1.classList.remove("title")
 //or
-tag.classList.toggle("title")
-
+h1.classList.toggle("title")
 
 ```
 <h4>textContent</h4>
@@ -140,7 +136,7 @@ tag.innerHTML = "<h1>blah blah blah</h1>"
 ```
 <h4>getAttribute and setAttribute</h4>
 
-We can also manipulate attibuttes, for example <strong>href</strong> or <strong>src</strong>.
+We can also manipulate attibuttes, for example `href` or `src`.
 
 ```html
 <a href="www.google.com">I am a link</a>
@@ -157,6 +153,40 @@ var img = document.querySelector("img");
 img.setAttibute("srcset", "ebaylogo.png");
 
 ```
+<h2>Events</h2>
+
+Events are notifications that are sent to the code that something happened on the webpage, for example, someone click a button, scroll down, etc.
+Then the function that performs the action based on that event is called the <b>event listener</b>.It just waits for it to happen.
+
+```javascript
+var h1 =document.querySelector("hello");
+
+h1.addEventListener("click",function(){
+alert("h1 was clicked");
+}) 
+
+```
+
+Imagine if we have a set of bullet points like this:
+
+
+* One
+* Two
+* Three
+
+If we wanted to manipulate wach one of them we can use a `for loop`. First let´s get the value.
+
+```javascript
+var li = document.querySelectorAll("li");
+```
+After we get the value we pass the for loop
+```javascript
+for(var i =0 ; i<li.length; i++){
+    li[i].addEventListener("click",function{
+        this.style.color = "pink";
+    })
+}
+
 
 
  <style>
