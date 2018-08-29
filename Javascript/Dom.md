@@ -189,18 +189,3 @@ for(var i =0 ; i<li.length; i++){
 ```
 
 
- <style>
-        h1 {
-            color:blue;
-            text-align:center;
-        }
-
-        h2{
-            color:green;
-        }
-
-        h4{
-            color:red;
-        }
-
-</style>
