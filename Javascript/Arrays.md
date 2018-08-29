@@ -1,7 +1,7 @@
 <h1>Arrays</h1>
 
 
-<h4>Syntax</h4>
+
 
 ************
 ```javascript
@@ -111,17 +111,7 @@ console.log(friendGroups[2][0];)
 
 
 <style>
-        h1 {
-            color:blue;
-            text-align:center;
-        }
-
-        h2{
-            color:green;
-        }
-
-        h4{
-            color:red;
-        }
-
+ h1{
+     color:red;
+ }
 </style>
