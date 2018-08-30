@@ -1,1 +1,0 @@
-db.copyDatabase("yelp_camp_v10cd", "yelp_camp_v11cd");

@@ -1,3 +1,6 @@
+<h1>Comand line commands</h1>
+
+```cmd
 ls => list all the files that are in the folder where i am;
 cd => get inside the file i want;
 ctrl + l => clear the console;
@@ -10,6 +13,7 @@ cp -r => copy the directoty => same as cp
 rm => delete the file
 rm - r => delete the directory
 mv => move the name of one file to other=> move file.txt files.txt => file is now files.txt
+```
 
 
 
