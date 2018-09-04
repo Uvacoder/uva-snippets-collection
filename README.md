@@ -28,7 +28,8 @@ Some small ground settings to be equal:
 
 This is just the beggining, so this readme is going to be improved and feel free to do so if you feel necessary with something important.
 
-Maybe when we have more info, we can code a app where all info is included
+Maybe when we have more info, we can code a app where all info is included.
+
 
 
 
