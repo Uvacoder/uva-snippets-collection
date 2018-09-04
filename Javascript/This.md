@@ -1,6 +1,10 @@
 <h1>This</h1>
 
-Some ways to get understand the `this`in javascript.
+Some ways to get understand the `this`in javascript.Can be determined using 4 rules(global,object/implicit,explicit,new).
+
+<h2>global</h2>
+
+When `this`is not inside of a declared object.
 
 ```javascript
 console.log(this);
@@ -20,6 +24,20 @@ calculateAge(1995);
 ```
 
 The `this` here still represents the window object because this is a regular function call, not a method.
+
+But if we had a variable inside the function declared with `this`
+
+```javascript
+function calculateAge(bornYear){
+  console.log(2018-bornYear);
+  console.log(this);
+  this.age= "1992;
+}
+
+calculateAge(1995);
+```
+
+
 
 ```javascript
 var dog = {
