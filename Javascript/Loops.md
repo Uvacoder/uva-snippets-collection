@@ -45,3 +45,14 @@ nums.forEach(function(num){
 The `forEach` we have a function and inside it we call an argument that we can call anything. That argument is what going to help loop over each element in an array.
 
 
+<h2>While Loop</h2>
+
+<h4>Syntax</h4>
+
+```javascript
+var i= 0;
+    while(i>0){
+    console.log(“text” + i);
+    i +=1;
+    }
+```
