@@ -1,6 +1,13 @@
 <h1>This</h1>
 
 Some ways to get understand the `this`in javascript.Can be determined using 4 rules(global,object/implicit,explicit,new).
+<ul>
+    <li>It is set during the global context, object binding, explicit binding, 
+        or the new keyword</li>
+    <li>When set in global context in a function, is it either the global object or     undefined(if using strict mode)</li>
+    <li>To explicitly use the value of the keyword `this, we can call `call`,
+        `apply`or `bind`.</li>
+        
 
 <h2>global</h2>
 
@@ -91,9 +98,11 @@ Here by calling the function `sayHi()` it will return `Hi Colt`, but calling the
 
 <h2>Call Aplly Bind</h2>
 
+<h4>call</h4>
+
 These are methods that only can be used on functions, and are used when we want full control of what the keyword `this`is.
 
-So Call takes a infinite number of parameteres and it´s called immediately.The first paramentere is the `thisArg`
+So call takes a infinite number of parameteres and it´s called immediately.The first paramentere is the `thisArg`
 ```javascript
 var person={
 firstName: "Colt", 
@@ -121,4 +130,63 @@ person.dog.sayHello.call(person) // "Hello Colt"
 ```
 
 
+<h4>apply</h4>
 
+```javascript
+
+var colt = {
+    firstName : "Colt",
+    sayHi: function(){
+        return "Hi" + this.firstName
+    },
+    addNumber : function (a,b,c,d){
+        return this.firstName + "just calculated" + (a+b+c+d);
+    }
+}
+
+var ellie = {
+    firstName: "Ellie"
+}
+colt.sayHi() // Hi Colt
+colt.addNumber(1,2,3,4) // Colt just calculated 10,
+
+colt.addNumber.call(ellie,1,2,3,3) // Ellie just calculated 10~
+
+colt.addNumber.apply(ellie,[1,2,3,4,])// Ellie just calculated 10
+```
+
+<h4>bind</h4>
+
+```javascript
+var colt={
+    firstName: function(){
+        return "Hi" + this.firstName
+    },
+    addNumbers: function(a,b,c,d){
+        return this.firstName + "just calculated" + (a+b+c+d);
+    }
+}
+
+var ellie = {
+    firstName : "Ellie"
+}
+
+var elliCalc = colt.addNumbers.bind(ellie,1,2,3,4);
+elliCalc();
+var elliCalc2 = colt.addNumbers.bind(ellie,1,2,)
+elliCalc2(3,4);
+
+```
+```javascript
+var colt = {
+    firstName: "Colt",
+    sayHi: function(){
+       setTimeout(function(){
+            console.log("Hi" + this.firstName);
+           
+        }.bind(this),1000)
+    }
+}
+
+colt.sayHi();
+```
