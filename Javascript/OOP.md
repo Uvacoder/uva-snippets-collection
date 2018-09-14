@@ -77,4 +77,38 @@ function Motorcycle(make,model,year){
 
 var honda = new Motorcycle(2.1,"turbo", 1980);
 ```
+<h2>Prototypes</h2>
 
+
+Every constructor function has a property on it called `prototype` which is an object, that can have methods and properties attached too.
+This methods and properties are shared and acessible by any object that is created from that constructor when the `new` keyword is used.
+The prototype has a property on it called "constructor", which points back to the constructor function.
+Anytime an object is created using the `new`keyword, a property called `_proto_` gets created, linking the object and the prototype property of the constructor function.
+
+
+```javascript
+function Person (name){
+    this.name= name;
+}
+```
+If we see it on the console, we can see that there is already a property on the function called prototype.
+
+So let´s create 2 objects:
+
+```javascript
+var ellie = new Person("Ellie");
+var john = new Person("John);
+
+ellie._proto_ === Person.prototype
+
+```
+
+The `Person.prototype` object has also a property called `constructor` which points back to the function.
+
+```javascript
+Person.prototype.constructor === Person;
+```
+
+
+circle = function
+square = object
