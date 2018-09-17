@@ -83,7 +83,7 @@ var honda = new Motorcycle(2.1,"turbo", 1980);
 Every constructor function has a property on it called `prototype` which is an object, that can have methods and properties attached too.
 This methods and properties are shared and acessible by any object that is created from that constructor when the `new` keyword is used.
 The prototype has a property on it called "constructor", which points back to the constructor function.
-Anytime an object is created using the `new`keyword, a property called `_proto_` gets created, linking the object and the prototype property of the constructor function.
+Anytime an object is created using the `new` keyword, a property called `_proto_` gets created, linking the object and the prototype property of the constructor function.
 
 
 ```javascript
@@ -107,6 +107,30 @@ The `Person.prototype` object has also a property called `constructor` which poi
 
 ```javascript
 Person.prototype.constructor === Person;
+```
+Where to use it?
+Imagine we have this function constructor:
+
+```javascript
+function Person(name){
+    this.name = name;
+    this.sayHi = function(){
+        return "Hi" + this.name
+
+    }
+}
+```
+
+So every time we create a new person we have to create the the function for it. With the `prototype`we can access the function with object created.
+
+```javascript
+function Person(name){
+    this.name = name;
+    }
+Person.prototype.sayHi = function(){
+        return "Hi" + this.name
+
+}
 ```
 
 

@@ -2,6 +2,13 @@
 
 <ul>
     <li>Objects</li>
+        <ul>
+            <li>Arrays</li>
+            <li>Functions</li>
+            <li>Objects</li>
+            <li>Dates</li>
+            <li>Wrappers for Numbers, String and booleans</li>
+        </ul>
     <li>Primitives</li>
         <ul>
             <li>String</li>
