@@ -132,7 +132,10 @@ Person.prototype.sayHi = function(){
 
 }
 ```
-
+<ul>Every JS object has a prototype property, which makes inheritance possible in JS</ul>
+<ul>The prototype of an object is where we put methods and properties that we want other objects to inherit</ul>
+<ul>The Constructor's prototype property is not the prototype of the Constructor itself, it's the prototype of All instances that are created through it</ul>
+<ul>When a certain method is called, the search starts in the object itself, and if it cannot be found, the search moves on to the object's prototype. This continues until the method is found:<strong>prototype chain</strong></ul>
 
 circle = function
 square = object

@@ -5,3 +5,6 @@ show dbs
 use "database name"
 show collections
 db."collection name".find()
+Erase data
+db.recipes.drop()
+
