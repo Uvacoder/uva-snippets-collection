@@ -139,3 +139,39 @@ Person.prototype.sayHi = function(){
 
 circle = function
 square = object
+
+So analysing in the console we can see that:
+
+```javascript
+
+john
+Person {name: "john", yearofBirth: 1990, job: "teacher"}
+job: "teacher"
+name: "john"
+yearofBirth: 1990
+__proto__:
+calculateAge: ƒ ()
+arguments: null
+caller: null
+length: 0
+name: ""
+prototype: {constructor: ƒ}
+__proto__: ƒ ()
+[[FunctionLocation]]: app.js:14
+[[Scopes]]: Scopes[1]
+constructor: ƒ (name, yearofBirth, job)
+__proto__:
+constructor: ƒ Object()
+hasOwnProperty: ƒ hasOwnProperty()
+isPrototypeOf: ƒ isPrototypeOf()
+propertyIsEnumerable: ƒ propertyIsEnumerable()
+toLocaleString: ƒ toLocaleString()
+toString: ƒ toString()
+valueOf: ƒ valueOf()
+__defineGetter__: ƒ __defineGetter__()
+__defineSetter__: ƒ __defineSetter__()
+__lookupGetter__: ƒ __lookupGetter__()
+__lookupSetter__: ƒ __lookupSetter__()
+get __proto__: ƒ __proto__()
+set __proto__: ƒ __proto__()
+```

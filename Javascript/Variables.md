@@ -14,6 +14,7 @@ Start your code with:
 We use them as symbolic name for value in a application.
 Some rules about it: Has to start with letter, underscore or dollar sign.
 Not to forget that Javascript is case sensitive.
+Variables can be used to represent any JavaScript data type.
 
 <h2>Declare a variable</h2>
 

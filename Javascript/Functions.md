@@ -11,6 +11,7 @@ function hello(){
 hello(); //calling the function => hello
 ```
 
+
 The function can have a name like this one `hello()`but also can be anonymous. For example `function (){}`. We use anonymous functions if we only need to use it once. In case we need a function more than once we name it.
 
 <h4>Function with arguments</h4>

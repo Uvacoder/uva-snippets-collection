@@ -1,5 +1,8 @@
 <h1>Arrays</h1>
 
+<h2>Definition<h2>
+
+Array is an object that hold value(of any type) in numerically indexed positions.
 
 <h2>Syntax</h2>
 
