@@ -31,3 +31,48 @@ var a;
 console.log("John has" + a + " years);
 //The value of a is undefined
 ```
+
+<h4>Reassign a var variable</h4>
+
+```javascript
+var password = 'myname';
+
+password = 'yourname';
+
+console.log(password); // yourname
+```
+
+<table>
+<tr>
+  <th>Keyword</th>
+  <th>Scope</th>
+  <th>Hosting</th>
+  <th>Can be reassigned</th>
+  <th>Can be declares</th>
+</tr>
+
+<tr>
+  <td>var</td>
+  <td>Function Scope</td>
+  <td>Yes</td>
+  <td>Yes</td>
+  <td>Yes</td>
+</tr>
+<tr>
+  <td>let</td>
+  <td>Block Scope</td>
+  <td>No</td>
+  <td>Yes</td>
+  <td>No</td>
+</tr>
+<tr>
+  <td>const</td>
+  <td>Block Scope</td>
+  <td>No</td>
+  <td>No</td>
+  <td>No</td>
+</tr>
+</table>
+
+There are two types of scope, the `global`and the `local`. The first is declared outside of a block and the last one inside of the block.
+

@@ -173,3 +173,84 @@ var expression = function(){
 In the function expression if you name the variable diferent you lost the function.
 If it starts with the word function is <strong>always</strong> a function declaration.
 
+<h4>Passing function as arguments</h4>
+
+```javascript
+var years=[1990,1965,1980,1998,1987];
+
+function arrayCalc(arr, fn){
+    var arrRes=[];
+    for var(i = 0; i <arr.length; i++ ){
+        arrRes.push(fn(arr[i]));
+    }
+    return arrRes;
+}
+
+function maxHeartRate(el){
+    if(el>= 18 && el <=81){
+        return Math.round(206.9-(0.67*el));
+    } else {
+        return -1;
+    }
+}
+
+function calculateAge(el){
+    return 2016- el;
+}
+
+var ages = arrayCalc(years,calculateAge);
+
+var rates = arrayCalc(ages, maxHeartRate);
+console.log(ages);
+```
+<h4>Functions returning functions</h4>
+
+```javascript
+function whereAreYouFrom(country){
+    if ( country === 'Portugal'){
+        return function(name) {
+            console.log(name + ' what is you football team');
+        }
+    } else if ( country === 'Finland'){
+        return function(name) {
+            console.log('What is your ice hockey team' + name);
+        } else {
+            return function(name){
+                console.log('Hello' + name + 'where are you from');
+            }
+        }
+    }
+
+var portugalQuestion = whereAreYouFrom('Portugal');
+
+portugalQuestion('Ricardo');
+
+```
+<h4>Immediately Invoked Function Expression - IIFE</h4>
+
+A normal function like this:
+
+```javascript
+function game() {
+    var score = Math.random()*10;
+    console.log(score>=5);
+}
+
+game();
+```
+
+But in the IIFE the same function goes like this:
+
+```javascript
+(function(){
+      var score = Math.random()*10;
+    console.log(score>=5);
+})();
+```
+To pass an argument inside a IIFE:
+```javascript
+(function(goodLuck){
+      var score = Math.random()*10;
+    console.log(score>=5 - goodLuck);
+})(5);
+```
