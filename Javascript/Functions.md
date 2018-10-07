@@ -1,5 +1,16 @@
 <h1>Functions</h1>
 
+<ol>
+    <li>Syntax</li>
+    <li>Functions with Arguments</li>
+    <li>Return Keyword</li>
+    <li>Scopes</li>
+    <li>Function Declaration/Function Expression</li>
+    <li>Passing function as arguments</li>
+    <li>Functions returning functions</li>
+    <li>Immediately Invoked Function Expression - IIFE</li>
+</ol>
+
 <h2>Syntax</h2>
 
 ```javascript
@@ -14,7 +25,7 @@ hello(); //calling the function => hello
 A function is a section of code that can be "called" by name, and the code that is inside the function it will run each time.
 The function can have a name like this one `hello()`but also can be anonymous. For example `function (){}`. We use anonymous functions if we only need to use it once. In case we need a function more than once we name it.
 
-<h4>Function with arguments</h4>
+<h2>Function with arguments</h2>
 
 An argument(or parameters) is what we name inside the function name. We can call it anything we want, we just need it to pass the value. They can optionally return a value back.
 
@@ -89,7 +100,7 @@ result;
 
 <h2>Scopes</h2>
 
-First let me say that scopes as basically anything as much more to it that what is here.This is my view for what i understood about scoping till now.
+First let me say that scopes has much more to it that what is here writeen.This is my view for what i understood about scoping till now.
 
 ```javascript
 var a = "Hello";
@@ -136,6 +147,17 @@ function third(){
 ```
 
 It gives that `c` is not defined because the `third` function can´t acess the `second` function because they are not in the same scope. but the third can access the `var a` because is in a global scope.
+One good way to understand was explained by the "Watch and Code" course by Gordon Zhu: If you are inside a function, you can look out and see the data, but the opposite isn't true.If you are outside a function you can't look in. Circle a function and then arrow where it goes get the data. A arrow can't go inside a function. Only out. This is a <strong>`scope`</strong>.
+
+````javascript
+var myName = Ricardo;
+function sayMyName(){
+    var secret = 'Moreira';
+    console.log(myName);
+}
+
+console.log(secret)// error
+sayMyName() // Ricardo
 
 <h4>High Order Function</h4>
 
@@ -150,7 +172,7 @@ function sing() {
 setInterval(anotherFunc, interval);
 
 setInterval(sing, 1000);
-```
+````
 
 `SetInterval`is a method that takes 2 arguments; one is the name of the function to pass and the other the interval to pass it.
 So here is going to pass the function sing in one second period(1000 miliseconds);
