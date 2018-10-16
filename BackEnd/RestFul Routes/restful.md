@@ -21,7 +21,7 @@
         <td>Display a form to make a new recipe</td>
     </tr>
     <tr>
-        <td>New</td>
+        <td>Create</td>
         <td>/recipes/new</td>
         <td>Post</td>
         <td>Add new recipe to database</td>

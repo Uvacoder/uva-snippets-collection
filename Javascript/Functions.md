@@ -29,6 +29,12 @@ The function can have a name like this one `hello()`but also can be anonymous. F
 
 An argument(or parameters) is what we name inside the function name. We can call it anything we want, we just need it to pass the value. They can optionally return a value back.
 
+<li>A function is a instance of the object type</li>
+<li>A function behaves like any other object</li>
+<li>We can store functions in a variable</li>
+<li>We can pass a function as an argument to another function</li>
+<li>We can return a function from a function</li>
+
 ```javascript
 function sayHello(name) {
   console.log("Hello there" + name);
@@ -214,6 +220,10 @@ function arrayCalc(arr, fn){
     return arrRes;
 }
 
+function isFullAge(el){
+    return el >= 18;
+}
+
 function maxHeartRate(el){
     if(el>= 18 && el <=81){
         return Math.round(206.9-(0.67*el));
@@ -227,7 +237,7 @@ function calculateAge(el){
 }
 
 var ages = arrayCalc(years,calculateAge);
-
+var fullAges= arrayCalc(ages, isFullAge);
 var rates = arrayCalc(ages, maxHeartRate);
 console.log(ages);
 ```
