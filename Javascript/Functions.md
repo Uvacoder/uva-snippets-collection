@@ -1,6 +1,7 @@
 <h1>Functions</h1>
 
 <ol>
+    <li>Definitions</li>
     <li>Syntax</li>
     <li>Functions with Arguments</li>
     <li>Return Keyword</li>
@@ -10,6 +11,10 @@
     <li>Functions returning functions</li>
     <li>Immediately Invoked Function Expression - IIFE</li>
 </ol>
+
+<li>Definitions</li>
+
+One `object`subtype you will found is a function. Functions are executed when they are called, known as <strong>Invoking a Function</strong>.Values can be passed into `functions` and used within the `function`. `Function` always `return` a value. If no value is specified, the `function`will return undefined.
 
 <h2>Syntax</h2>
 
@@ -193,6 +198,8 @@ setInterval(function() {
 ```
 
 <h4>Function Declaration/Function Expression</h4>
+
+A `function declaration` defines a named function. To create it you use the `function`keyword followed by the name of the `function`. When using a `function declaration` the `function`definition is `hoisted`, allowing the `function`to be used before it is defined.
 
 ```javascript
 function declaration() {

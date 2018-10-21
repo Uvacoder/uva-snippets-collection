@@ -6,9 +6,9 @@ Some ways to get understand the `this`in javascript.Can be determined using 4 ru
     <li>It is set during the global context, object binding, explicit binding, 
         or the new keyword</li>
     <li>When set in global context in a function, is it either the global object or     undefined(if using strict mode)</li>
+    <li>When the keyword <strong>this</strong> is used inside of a declared object, the value of <strong>this</strong> is set to the closest parent object the method is called on</li>
     <li>To explicitly use the value of the keyword `this, we can call `call`,
         `apply`or `bind`.</li>
-
 
 <h2>global</h2>
 
@@ -98,11 +98,11 @@ Here by calling the function `sayHi()` it will return `Hi Colt`, but calling the
 
 <h2>Call Aplly Bind</h2>
 
-<h4>call</h4>
+<h4>Call</h4>
 
 These are methods that only can be used on functions, and are used when we want full control of what the keyword `this`is.
 
-So call takes a infinite number of parameteres and it´s called immediately.The first paramentere is the `thisArg`
+So `call` takes a infinite number of parameteres and it´s called immediately.The first paramenter is the `thisArg`
 
 ```javascript
 var person = {
@@ -134,7 +134,7 @@ person.dog.sayHello.call(person); // "Hello Colt"
 Another example:
 
 ```javascript
-var john ={
+var person ={
     name:'John',
     age :26,
     job:'teacher'
@@ -149,7 +149,7 @@ var john ={
     }
 }
 
-john.presentation("formal", 'morning')
+person.presentation("formal", 'morning')
 ```
 
 So this code works just fine correct. Let's add another object.
@@ -166,10 +166,10 @@ So what would happen if we want to add the presentation function to this object?
 We can use `call` where first argument is the `this object`.
 
 ```javascript
-john.presentation.call(emily, "friendly", "afternoon");
+person.presentation.call(emily, "friendly", "afternoon");
 ```
 
-So like this all `this objects`in john object belong now to Emily.
+So like this all `this objects`in person object belong now to Emily.
 
 <h4>apply</h4>
 
