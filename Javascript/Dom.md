@@ -195,3 +195,14 @@ for(var i =0 ; i<li.length; i++){
     })
 }
 ```
+
+<h4>Key pressed</h4>
+
+To create a event listener not on `click`but on key pressed :
+
+```javascript
+document.addEventListener("keypress", function(event) {
+    if (event.keyCode === 13 || event.which === 13) {
+      //some code here
+    }
+```

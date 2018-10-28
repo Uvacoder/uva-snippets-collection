@@ -1,11 +1,16 @@
 <h1>Objects</h1>
 
 <ol>
+<li>Definition</li>
 <li>Syntax</li>
 <li>Acessing the Properties</li>
 <li>Nested Objects and Arrays</li>
 <li>Methods</li>
 </ol>
+
+<h2>Definition</h2>
+
+Objects are a compound value where you can set properties(named locations) that each hold thei own values of any type.It has key value pairs.
 
 <h2>Syntax</h2>
 

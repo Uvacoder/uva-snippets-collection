@@ -30,9 +30,20 @@ hello(); //calling the function => hello
 A function is a section of code that can be "called" by name, and the code that is inside the function it will run each time.
 The function can have a name like this one `hello()`but also can be anonymous. For example `function (){}`. We use anonymous functions if we only need to use it once. In case we need a function more than once we name it.
 
-<h2>Function with arguments</h2>
+<h2>Function with arguments and parameters</h2>
 
-An argument(or parameters) is what we name inside the function name. We can call it anything we want, we just need it to pass the value. They can optionally return a value back.
+A `Parameters` is what we name inside the function name. We can call it anything we want, we just need it to pass the value. They can optionally return a value back.We can pass in up to 255 parameters. They are separeted by commas.
+`Arguments`are the values the function receives from each parameter when the function is executed(invoked)
+
+```javascript
+function twoParams(param1, param2) {
+  console.log(param1, param2);
+}
+
+twoParams(true, false);
+```
+
+In this example, `true`and `false`are the arguments of the `parameters`param1 and param2.
 
 <li>A function is a instance of the object type</li>
 <li>A function behaves like any other object</li>
@@ -112,9 +123,12 @@ result;
 <h2>Scopes</h2>
 
 First let me say that scopes has much more to it that what is here writeen.This is my view for what i understood about scoping till now.
+The `var` keyword is to declare a variable that will belong to the `function scope`, if it's inside the function. Will belong to the `global scope` if is outside the function.
+That means that a `function`can access data outside the `function`but when outside of the `function`you can't access the data inside a `function`.
 
 ```javascript
 var a = "Hello";
+console.log(b + c);
 
 function first() {
   var b = "Hi";
@@ -124,6 +138,7 @@ function first() {
     console.log(a + b + c);
   }
 }
+//undefined
 // (HelloHihei)
 ```
 
@@ -205,7 +220,11 @@ A `function declaration` defines a named function. To create it you use the `fun
 function declaration() {
   console.log("hello");
 }
+```
 
+A `function expression`defines a named or anonymous `function`, a function with no name. `Function Expressions`are not hoisted, and therefore cannot be used before being defined.
+
+```javascript
 var expression = function() {
   console.log("hello");
 };
