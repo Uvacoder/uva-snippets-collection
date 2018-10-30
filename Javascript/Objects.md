@@ -10,7 +10,7 @@
 
 <h2>Definition</h2>
 
-Objects are a compound value where you can set properties(named locations) that each hold thei own values of any type.It has key value pairs.
+Objects are a compound value where you can set properties(named locations) that each hold thei own values of any type.It has key value pairs.A key is a string. The value can be a primitive, object, or function.
 
 <h2>Syntax</h2>
 

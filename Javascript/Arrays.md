@@ -16,6 +16,17 @@ var todos = new Array(1, 2, 3);
 
 Both are used, but declaring the array between the brackets are more used.
 
+So a simple array like:
+
+````javascript
+let arr= ['a', 'b','c']
+//is emulated to
+{
+  0:'a',
+  1:'b',
+  2:'c'
+}
+
 <h2>Access the data in an Array</h2>
 
 ---
@@ -26,7 +37,7 @@ Arrays can be accessed from their position/index.But the position starts on **0*
 todos.length; // 3
 console.log(todos);
 //['item1', 'item2', 'item3']
-```
+````
 
 To change the data of one element, we only need to access with the index and assign a new value.
 

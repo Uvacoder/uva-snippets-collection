@@ -6,15 +6,16 @@
     <li>Functions with Arguments</li>
     <li>Return Keyword</li>
     <li>Scopes</li>
-    <li>Function Declaration/Function Expression</li>
+    <li>Function Declaration/Function Expression/Arrow Function</li>
     <li>Passing function as arguments</li>
     <li>Functions returning functions</li>
+    <li>Functions Invocations</li>
     <li>Immediately Invoked Function Expression - IIFE</li>
 </ol>
 
 <li>Definitions</li>
 
-One `object`subtype you will found is a function. Functions are executed when they are called, known as <strong>Invoking a Function</strong>.Values can be passed into `functions` and used within the `function`. `Function` always `return` a value. If no value is specified, the `function`will return undefined.
+One `object`subtype you will found is a function. Functions are executed when they are called, known as <strong>Invoking a Function</strong>.Values can be passed into `functions` and used within the `function`. `Function` always `return` a value. If no value is specified, the `function`will return undefined. There are 3 ways to define a function: `Function Declararion(Function Statement)`, `Function Expression(Function Literal)`, `Arrow Function`.
 
 <h2>Syntax</h2>
 
@@ -214,7 +215,7 @@ setInterval(function() {
 
 <h4>Function Declaration/Function Expression</h4>
 
-A `function declaration` defines a named function. To create it you use the `function`keyword followed by the name of the `function`. When using a `function declaration` the `function`definition is `hoisted`, allowing the `function`to be used before it is defined.
+A `function declaration` defines a named function. To create it you use the `function`keyword followed by the name of the `function`. When using a `function declaration` the `function`definition is `hoisted`, allowing the `function`to be used before it is defined. `function`is the first keyword on the line. It has to has a name. It can be used before definition.
 
 ```javascript
 function declaration() {
@@ -222,7 +223,7 @@ function declaration() {
 }
 ```
 
-A `function expression`defines a named or anonymous `function`, a function with no name. `Function Expressions`are not hoisted, and therefore cannot be used before being defined.
+A `function expression`defines a named or anonymous `function`, a function with no name. `Function Expressions`are not hoisted, and therefore cannot be used before being defined. `function` is not the first keyword on the line.The name is optional. There can be an anonymous `function expression` or a named `function expression`.It needs to be defined, then it can execute. It can auto-execute after definition `IIFE`.
 
 ```javascript
 var expression = function() {
@@ -231,7 +232,13 @@ var expression = function() {
 ```
 
 In the function expression if you name the variable diferent you lost the function.
-If it starts with the word function is <strong>always</strong> a function declaration.
+If it starts with the word function is <strong>always</strong> a `function declaration`.
+
+A `arrow function` is just another way to create a anonymous `function expression`. They don't have their own `this`and `arguments`.
+
+```javascript
+let testThis = () => {};
+```
 
 <h4>Passing function as arguments</h4>
 
@@ -290,6 +297,8 @@ var portugalQuestion = whereAreYouFrom('Portugal');
 
 portugalQuestion('Ricardo');
 ```
+
+<h4>Function Invocation</h4>
 
 <h4>Immediately Invoked Function Expression - IIFE</h4>
 

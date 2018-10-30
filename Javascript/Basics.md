@@ -31,4 +31,45 @@
     <li>Comparison "<,>"</li>
     <li>Logical "&&(and); ||(or)</li>
 </ol>
-    
+
+<h2>Coercion</h2>
+
+<h4>Explicit Coercion</h4>
+
+```javascript
+var a = "42";
+var b = Number(a);
+console.log(a);
+console.log(b);
+//"42"
+//42
+```
+
+<h4>Implicit Coercion</h4>
+
+```javascript
+var a = "42";
+var b = a * 1: //"42" is implicitly coerced to 42
+```
+
+Let´s talk about `type coercion`
+
+```javascript
+var x = 99;
+x == "99"; //true because it makes type coercion
+x === "99"; //false because don't make type coercion. Checks for number and type, and because one is a number the other is a string.
+```
+
+So `==` checks for value equality with `coercion`allowed and `===` checks for value equality without `coercion`. It's called a `strict equality`.
+But be carefull when comparing non-primitives values like `object`(including function and array).Because these values are held by reference. They check if the reference matches not the values.
+For example, `arrays`are coerced to string by simply joining all the values by commas. So it would seem that two arrays with the same contents are the same but are not.
+
+```javascript
+var a = [1, 2, 3];
+var b = [1, 2, 3];
+var c = "1,2,3";
+
+a == c; //true
+b == c; //true
+a == b; //false
+```
