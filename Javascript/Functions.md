@@ -300,6 +300,18 @@ portugalQuestion('Ricardo');
 
 <h4>Function Invocation</h4>
 
+A function defined with the `function`keyword, can be invoked in different ways:
+
+<strong>Function Form</strong>
+`doSomething(arguments)`
+<strong>Method Form</strong>
+`theObject.doSomething(arguments)`
+<strong>Constructor Form</strong>
+`new doSomething(arguments)
+<strong>Apply Form</strong>
+doSomething.apply(theObject, [arguments])
+doSomething.call(theObject, [arguments])
+
 <h4>Immediately Invoked Function Expression - IIFE</h4>
 
 A normal function like this:
