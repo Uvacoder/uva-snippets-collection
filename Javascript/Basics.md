@@ -73,3 +73,27 @@ a == c; //true
 b == c; //true
 a == b; //false
 ```
+
+<h1>Truthy and Falsy values</h1>
+
+```javascript
+true == "1"; //true
+true == "2"; //false
+0 == false; // true
+0 == ""; //true
+null == undefined; //true
+NaN == NaN; //false
+"" == false; // true
+```
+
+<h4>Falsy Values</h4>
+
+<li>false</li>
+<li>0</li>
+<li>''</li>
+<li>Null</li>
+<li>Undefined</li>
+<li>NaN</li>
+
+`Null` and `Undefined`are only equal to themselves.
+`NaN`is not equivalent to nothing, not even to itself.
