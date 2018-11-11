@@ -8,6 +8,7 @@ They are putted inside the HTML tags using the `style`attribute:
 
 ```css
 <p style= "color: red">Text here</p
+
 ```
 
  <h4>Internal</h4>
@@ -16,20 +17,35 @@ They are used for the whole page. Inside the `head`element, the `style`tags gets
 
 ```css
 <!DOCTYPE html>
+
 <html>
+
 <head>
+
 <title>CSS Example</title>
+
 <style>
 
+
+
    p {
+
        color: red;
+
    }
+
+
 
    a {
+
        color: blue;
+
    }
 
+
+
 </style>
+
 ```
 
 <h4>External</h4>
@@ -44,6 +60,15 @@ And then is css we just:
 ```css
 p{
     color:red;
+}
+```
+
+So we can put as syntax:
+
+```css
+Selector {
+  property: value;
+  property: value;
 }
 ```
 
