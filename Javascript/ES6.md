@@ -21,3 +21,70 @@ if (bol){
 console.log(a)//4
 console.log(b)//ReferenceError!
 ```
+
+So let's see one example of variables assignment in Es5 and Es6
+
+```javascript
+//ES5
+var name5 = "Ricardo";
+var age5 = "38";
+name5 = "Joao";
+console.log(name5); //Joao
+
+//ES6
+const name6 = "Ricardo";
+let age6 = "38";
+name6 = "Joao";
+console.log(name6); //error
+```
+
+And about scope? What if we have a `if`condition inside an function:
+
+```javascript
+function driversLicense5(passedTest) {
+  if (passedTest) {
+    var firstName = "Ricardo";
+    var yearOfBirth = 1980;
+    console.log(
+      firstName +
+        "born in" +
+        yearOfBirth +
+        "is now officially aloud to drive a car"
+    );
+  }
+  console.log(
+    firstName +
+      "born in" +
+      yearOfBirth +
+      "is now officially aloud to drive a car"
+  );
+}
+driversLicense(true);
+```
+
+In this case both works, the console will print both values.
+
+```javascript
+function driversLicense6(passedTest) {
+  if (passedTest) {
+    let firstName = "Ricardo";
+    const yearOfBirth = 1980;
+    console.log(
+      firstName +
+        "born in" +
+        yearOfBirth +
+        "is now officially aloud to drive a car"
+    );
+  }
+  console.log(
+    firstName +
+      "born in" +
+      yearOfBirth +
+      "is now officially aloud to drive a car"
+  );
+}
+driversLicense(true);
+```
+
+In this case the one outside the `if` statement it says `firstName` is not defined, That because `let` is not function scoped but blocked scoped, meaning that the value declared by `let`is only available inside the block, in this case the `{}`.
+So let it works like a function.
