@@ -97,3 +97,39 @@ NaN == NaN; //false
 
 `Null` and `Undefined`are only equal to themselves.
 `NaN`is not equivalent to nothing, not even to itself.
+
+<h1>Numbers</h1>
+
+<h4>Numbers Conversion</h4>
+
+There are 3 functions to convert nonnumeric values into numbers:
+
+<ul>
+    <li>number()</li>
+    <li>parseInt()</li>
+    <li>parseFloat</li>
+</ul>
+
+<p><strong>Number()</strong></p>
+
+The `number`function can be used in any data type. And it's based on these rules:
+
+<ul>
+    <li>When applied to boolean values, <em>true</em> and <em>false</em> get converted into <em>1</em> and <em>0</em> </li>
+    <li>When applied to numbers, the value is simply passed through and returned</li>
+    <li>When applied to <em>null</em>, Nmber() returns <em>0</em></li>
+    <li>When applied to <em>undefined</em>, Number() returns <em>NAN</em></li>
+    <li>When applied to strings, the following rules are applied</li>
+        <ul>
+            <li>If the strings contains only numbers, it always converted to a decimal number</li>
+            <li>If the string contains a valid floating point, it is converted into the appropriate floating-point numeric value</li>
+            <li>If the string contains a hexadecimal format it is converted to a integer that matched the hexadecimal value.</li>
+            <li>If the string is empty it is converted to <em>0</em></li>
+            <li>Anything else than this formats it is converted to <em>NAN<em></li>
+        </ul>
+</ul>
+
+<p><strong>parseInt</strong></p>
+
+<p>Because of the complexities and oddities of the `number()`function when converting strings, the `parseInt()` is a better option when dealing with integers.
+If the first characther isn't a number, the minius or the plus sign, the `parseInt()` always returns `NaN`. For example `1234rio`will be converted in `1234`because `rio`will be ignored.And `22.5` will be 22 because the decimal is not a valid integer.</p>
