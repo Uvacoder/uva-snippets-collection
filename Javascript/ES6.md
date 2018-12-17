@@ -163,3 +163,168 @@ newAges6 = years.map((el, index) => {
 
 console.log(newAges6);
 ```
+
+<strong><p>The `this` in arrow Function</p></strong>
+
+Let´s see an example in ES5 and in ES6
+
+```javascript
+var box5 = {
+  color: "green",
+  position: 1,
+  clickme: function() {
+    var self = this;
+    document.querySelector(".green").addEventListener("click", function() {
+      var str = "This is a box" + self.color + "in position" + self.position;
+      alert(str);
+    });
+  }
+};
+console.log(this);
+box5.clickme();
+```
+
+In ES5, to get the properties inside the method we can't use the `this` keyword, because it point to the window object, because only in the method call will point to that `object`.
+So in this case we have to create a variable outside the `callback`function.
+
+```javascript
+const box6 = {
+  color: "green",
+  position: 1,
+  clickme: function() {
+    document.querySelector(".green").addEventListener("click", () => {
+      var str = "This is a box" + this.color + "in position" + this.position;
+      alert(str);
+    });
+  }
+};
+console.log(this);
+box5.clickme();
+```
+
+But with the arrow function we don't need because it points to the object.
+
+Let's see the same example with a function constructor
+
+```javascript
+//ES5
+function Person(name) {
+  this.name = name;
+}
+Person.prototype.myFriends5 = function(friends) {
+  var arr = friends.map(
+    function(el) {
+      return this.name + " is friends with" + el;
+    }.bind(this)
+  );
+  console.log(arr);
+};
+
+var friends = ["bob", "jane", "mark"];
+new Person("john").myFriends5(friends);
+```
+
+<p>We have to use the bind method(could be also with the self var like before) to make the `this`point to the function constructor.Without it, only would point to the window</p>
+
+```javascript
+//ES6
+function Person(name) {
+  this.name = name;
+}
+Person.prototype.myFriends6 = function(friends) {
+  var arr = friends.map(el => `${this.name} is friends with ${el}`);
+  console.log(arr);
+};
+
+var friends = ["bob", "jane", "mark"];
+new Person("mike").myFriends6(friends);
+```
+
+<p>Here the `this`keyword represents the function constructor</p>
+
+<h4>Arrays and node List</h4>
+
+<p>When you have a node list that you want to acces each element in ES5, you could do this way:</p>
+
+```javascript
+const boxes= document.querySelectorAll(".box);
+
+var boxesArr5 = Array.prototype.slice.call(boxes);
+boxesArr5.forEach(function(cur){
+  cur.style.backgroundColor = 'blue';
+});
+```
+
+But in ES6 you can do with with a new method called `from`
+
+```javascript
+const boxes = document.querySelectorAll(".box);
+Array.from(boxes).forEach(cur =>
+'blue');
+```
+<h4>forOf</h4>
+
+<h4>Index Of</h4>
+
+In ES5 to find inside an array a value we had to use the method `index Of` and would be like this:
+
+```javascript
+var ages = [12, 18, 5, 10, 15];
+
+var full = ages.map(function(cur){
+  return cur >=18;
+})
+
+console.log(full);
+console.log(full.IndexOf(true));
+
+console.log(ages[full.indexOf(true)]);
+
+```
+
+But in ES6 it´s more easy and clean:
+
+```javascript
+console.log(ages.findIndex(cur => cur>=18));
+console.log(ages.find(cur=> cur >=18));
+```
+
+<h4>Spread Operator</h4>
+
+The spread operator enables for example an array to be expandable.
+
+Let's see some examples:
+
+We have this function:
+```javascript
+function addFourAges(a,b,c,d){
+  return a + b + c +d; 
+}
+
+var sum1 = addFourAges(18,30,12,21);
+console.log(sum1);
+```
+If we had an array in `ES5`we had to use the apply method:
+```javascript
+var ages= [18,30,12,25];
+var sum2 = addFourAges.apply(null,ages);
+console.log(sum2);
+
+```
+
+In ES6 we can easily use the spread operator:
+
+```javascript
+var sum3 = addFourAges(...ages);
+console.log(sum3);
+```
+
+And when there is 2 or more arrays?
+ 
+```javascript
+const familySmith = ['john', 'maria', 'luke'];
+const familiaSilva = ['joao','maria', 'luis'];
+const bigFamily = [...familySmith, ...familiaSilva];
+
+console.log(bigFamily);
+```

@@ -4,7 +4,7 @@ Each time the `loop`block executes, it's called a `iteration`.
 
 <h2>For Loop</h2>
 
-The foor loop, is the one we use more.
+The `foor loop`, is the one we use more.
 
 ```javascript
 var x = [1, 2, 3, 4, 5];
@@ -61,7 +61,7 @@ nums.forEach(logNum);
 The `forEach` we have a function and inside it we call an argument that we can call anything. That argument is what going to help loop over each element in an array.
 
 <h2>While Loop</h2>
-A `while loop` is similar to a `if`statement, except it repeats a given code block instead of just running it once.
+A `while loop` is similar to a `if` statement, except it repeats a given code block instead of just running it once. Repeats the code <strong>WHILE</strong> a condition is true.
 <h4>Syntax</h4>
 
 ```javascript
@@ -71,3 +71,21 @@ var i= 0;
     i +=1;
     }
 ```
+
+Another example:
+```javascript
+var str = "hello";
+var count = 0;
+while(i<str.length){
+  console.log(str[count]);
+  count++;
+}
+
+<h2>Looping Backwards</h2>
+
+```javascript
+var john = ['john','smith',1990, 'alex', 'blue];
+
+for ( var i = john.length - 1; i >=0 ;i--)[
+  console.log(john[i]);
+]

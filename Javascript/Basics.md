@@ -132,4 +132,8 @@ The `number`function can be used in any data type. And it's based on these rules
 <p><strong>parseInt</strong></p>
 
 <p>Because of the complexities and oddities of the `number()`function when converting strings, the `parseInt()` is a better option when dealing with integers.
-If the first characther isn't a number, the minius or the plus sign, the `parseInt()` always returns `NaN`. For example `1234rio`will be converted in `1234`because `rio`will be ignored.And `22.5` will be 22 because the decimal is not a valid integer.</p>
+If the first characther isn't a number, the minius or the plus sign, the `parseInt()` always returns `NaN`. For example `1234rio`will be converted in `1234`because `rio` will be ignored.And `22.5` will be 22 because the decimal is not a valid integer.</p>
+
+<p><strong>parseFloar</strong></p>
+
+<p>It works like `parseInt`where looks at each caracter starting in position 0. Also continues to parse the string until it reaches the end of the string or a character that is invalid in a floation-point number.</p>
