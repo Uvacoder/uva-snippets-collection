@@ -328,3 +328,86 @@ const bigFamily = [...familySmith, ...familiaSilva];
 
 console.log(bigFamily);
 ```
+
+<h4>Rest Parameters</h4>
+
+```javascript
+//ES5
+function isFullAge5(){
+  var argsArr = 
+  Array.prototype.slice.call(arguments);
+  argsArr.forEach(function(cur){
+    console.log((2016-cur)>=18
+    );
+  })
+}
+
+isFullAge5(1990,2005,2006)
+
+//ES6
+
+function isFullAge6(...years){
+  years.forEach(cur => console.log(
+    (2016-cur)>=18));
+}
+
+isFullAge6(1980,2002,2003) 
+```
+
+```javascript
+//ES5
+function isFullAge5(limit){
+  var argsArr = 
+  Array.prototype.slice.call(arguments, 1);
+   // only start counting on the index 1
+   //so the pararamenter limit can be used but not counted as argument
+  argsArr.forEach(function(cur){
+    console.log((2016-cur)>=limit
+    );
+  })
+}
+
+isFullAge5(21, 1990,2005,2006)
+
+//ES6
+
+function isFullAge6(limit, ...years){
+  years.forEach(cur => console.log(
+    (2016-cur)>=limit));
+}
+
+isFullAge6(1980,2002,2003)
+```
+
+
+<strong><p>Default Parameters</p></strong>
+
+```javascript
+
+//ES5
+ function SmithPerson(firstName, yearOfBirth,lastName, nationality){
+
+  lastName === undefined ? lastName = 'Smith' : lastName =lastName;
+  nationality === undefined ? nationality = "American" : nationality=nationality;
+  
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.yearOfBirth = yearOfBirth;
+  this.nationality = nationality;
+} 
+
+//ES6
+
+function SmithPerson(firstName,yearOfBirth, lastName = "Smith", nationality = "american"){
+  this.firstName = firstName;
+  this.yearOfBirth = yearOfBirth;
+  this.lastName = lastName;
+  this.nationality = nationality;
+}
+
+var john = new SmithPerson('john', 1990);
+
+var Eve = new SmithPerson('eve',1993, 'coisinha', 'americana')
+```
+<h4>Maps</h4>
+

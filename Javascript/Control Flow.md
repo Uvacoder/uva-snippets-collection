@@ -149,3 +149,16 @@ console.log(X);
 ```
 
 <p>With ES6 the `let`and `const`variable declarations are block scoped</p>
+
+<h4>Nested for loops</h4>
+
+For loops can also be nested inside of each other. Imagine that you want to print out a list that can record the workouts. Four exercises with three sets each.
+
+```javascript
+for(var i =1; i<=4;i++){
+  console.log("Exercise": i);
+  for ( var j=1; j < 3; j++){
+    console.log("set:" j)
+  }
+}
+```

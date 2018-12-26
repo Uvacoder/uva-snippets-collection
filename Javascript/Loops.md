@@ -75,11 +75,13 @@ var i= 0;
 Another example:
 ```javascript
 var str = "hello";
+//first carachter is at index0
 var count = 0;
 while(i<str.length){
   console.log(str[count]);
   count++;
 }
+```
 
 <h2>Looping Backwards</h2>
 
