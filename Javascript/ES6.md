@@ -411,3 +411,41 @@ var Eve = new SmithPerson('eve',1993, 'coisinha', 'americana')
 ```
 <h4>Maps</h4>
 
+Maps are iterable and we can use anything as keys.And it's easy to add or remove data from a property.
+
+```javascript
+const question = new Map();
+question.set("question", "What is the official name of the latest JS version?");
+question.set(1,"ES5");
+question.set(2,"ES6")
+question.set(3,"ES7")
+question.set(4,"ES2015");
+question.set('correct', 3);
+question.set(true, 'You got it right');
+question.set(false, "Wrong.try again");
+
+console.log(question.get('question'));
+console.log(question.size);
+
+if(question.has(4)){
+  //question.delete(4);
+  console.log("You are here");
+}
+```
+
+To `loop`thru a map we simply can do this:
+
+```javascript
+question.forEach((value,key)=>
+console.log(`This is ${key} and is set to ${value}`));
+```
+Or
+```javascript
+for (let[key, value] of question.entries()){
+  if(typeof(key)==='number'){
+    console.log(`Answer ${key}:${value}`);
+  }
+}
+```
+
+
