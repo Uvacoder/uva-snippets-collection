@@ -86,8 +86,29 @@ while(i<str.length){
 <h2>Looping Backwards</h2>
 
 ```javascript
-var john = ['john','smith',1990, 'alex', 'blue];
+var person = ['john','smith',1990, 'alex', 'blue];
 
-for ( var i = john.length - 1; i >=0 ;i--)[
-  console.log(john[i]);
+for ( var i = person.length - 1; i >=0 ;i--)[
+  console.log(person[i]);
 ]
+```
+
+<h2>Nested Loops</h2>
+
+```javascript
+
+var matrix=[
+  [1,2,3],
+  [4,5,6],
+  [7,8,9],
+  [10]
+]
+
+for(var i = 0; i < matrix.length;i++){
+  for(var j=0; j <matrix[i].length;j++){
+    console.log(matrix[i][j]);
+  }
+  console.log("<br>");
+}
+
+```
