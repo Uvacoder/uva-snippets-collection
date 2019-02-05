@@ -186,7 +186,7 @@ When writing a ´const` write all in uppercase as convention.
 ```javascript
 const NAME = "Ricardo";
 NAME = "Luigi";
-~console.log(NAME);
+console.log(NAME);
 //Uncaught TypeError: Assignment to constant variable.
 ```
 
