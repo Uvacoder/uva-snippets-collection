@@ -1,3 +1,5 @@
+`Async`functions prove a better way, or at least more clean to write less code that we would get with promises.
+
 ```javascript
 const second = () => {
   console.log("how are you doing");

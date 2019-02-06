@@ -262,6 +262,7 @@ const boxes = document.querySelectorAll(".box);
 Array.from(boxes).forEach(cur =>
 'blue');
 ```
+
 <h4>forOf</h4>
 
 <h4>Index Of</h4>
@@ -271,22 +272,21 @@ In ES5 to find inside an array a value we had to use the method `index Of` and w
 ```javascript
 var ages = [12, 18, 5, 10, 15];
 
-var full = ages.map(function(cur){
-  return cur >=18;
-})
+var full = ages.map(function(cur) {
+  return cur >= 18;
+});
 
 console.log(full);
 console.log(full.IndexOf(true));
 
 console.log(ages[full.indexOf(true)]);
-
 ```
 
 But in ES6 it´s more easy and clean:
 
 ```javascript
-console.log(ages.findIndex(cur => cur>=18));
-console.log(ages.find(cur=> cur >=18));
+console.log(ages.findIndex(cur => cur >= 18));
+console.log(ages.find(cur => cur >= 18));
 ```
 
 <h4>Spread Operator</h4>
@@ -296,20 +296,22 @@ The spread operator enables for example an array to be expandable.
 Let's see some examples:
 
 We have this function:
+
 ```javascript
-function addFourAges(a,b,c,d){
-  return a + b + c +d; 
+function addFourAges(a, b, c, d) {
+  return a + b + c + d;
 }
 
-var sum1 = addFourAges(18,30,12,21);
+var sum1 = addFourAges(18, 30, 12, 21);
 console.log(sum1);
 ```
-If we had an array in `ES5`we had to use the apply method:
-```javascript
-var ages= [18,30,12,25];
-var sum2 = addFourAges.apply(null,ages);
-console.log(sum2);
 
+If we had an array in `ES5`we had to use the apply method:
+
+```javascript
+var ages = [18, 30, 12, 25];
+var sum2 = addFourAges.apply(null, ages);
+console.log(sum2);
 ```
 
 In ES6 we can easily use the spread operator:
@@ -320,95 +322,103 @@ console.log(sum3);
 ```
 
 And when there is 2 or more arrays?
- 
+
 ```javascript
-const familySmith = ['john', 'maria', 'luke'];
-const familiaSilva = ['joao','maria', 'luis'];
+const familySmith = ["john", "maria", "luke"];
+const familiaSilva = ["joao", "maria", "luis"];
 const bigFamily = [...familySmith, ...familiaSilva];
 
 console.log(bigFamily);
+```
+
+Another example:
+
+```javascript
+const input = {x :1, y:2, a:3, b:4};
+const {x, y, ...z} = input;
+console.log(x) //1
+console.log(z) {a:3, b:4}
 ```
 
 <h4>Rest Parameters</h4>
 
 ```javascript
 //ES5
-function isFullAge5(){
-  var argsArr = 
-  Array.prototype.slice.call(arguments);
-  argsArr.forEach(function(cur){
-    console.log((2016-cur)>=18
-    );
-  })
+function isFullAge5() {
+  var argsArr = Array.prototype.slice.call(arguments);
+  argsArr.forEach(function(cur) {
+    console.log(2016 - cur >= 18);
+  });
 }
 
-isFullAge5(1990,2005,2006)
+isFullAge5(1990, 2005, 2006);
 
 //ES6
 
-function isFullAge6(...years){
-  years.forEach(cur => console.log(
-    (2016-cur)>=18));
+function isFullAge6(...years) {
+  years.forEach(cur => console.log(2016 - cur >= 18));
 }
 
-isFullAge6(1980,2002,2003) 
+isFullAge6(1980, 2002, 2003);
 ```
 
 ```javascript
 //ES5
-function isFullAge5(limit){
-  var argsArr = 
-  Array.prototype.slice.call(arguments, 1);
-   // only start counting on the index 1
-   //so the pararamenter limit can be used but not counted as argument
-  argsArr.forEach(function(cur){
-    console.log((2016-cur)>=limit
-    );
-  })
+function isFullAge5(limit) {
+  var argsArr = Array.prototype.slice.call(arguments, 1);
+  // only start counting on the index 1
+  //so the pararamenter limit can be used but not counted as argument
+  argsArr.forEach(function(cur) {
+    console.log(2016 - cur >= limit);
+  });
 }
 
-isFullAge5(21, 1990,2005,2006)
+isFullAge5(21, 1990, 2005, 2006);
 
 //ES6
 
-function isFullAge6(limit, ...years){
-  years.forEach(cur => console.log(
-    (2016-cur)>=limit));
+function isFullAge6(limit, ...years) {
+  years.forEach(cur => console.log(2016 - cur >= limit));
 }
 
-isFullAge6(1980,2002,2003)
+isFullAge6(1980, 2002, 2003);
 ```
-
 
 <strong><p>Default Parameters</p></strong>
 
 ```javascript
-
 //ES5
- function SmithPerson(firstName, yearOfBirth,lastName, nationality){
+function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
+  lastName === undefined ? (lastName = "Smith") : (lastName = lastName);
+  nationality === undefined
+    ? (nationality = "American")
+    : (nationality = nationality);
 
-  lastName === undefined ? lastName = 'Smith' : lastName =lastName;
-  nationality === undefined ? nationality = "American" : nationality=nationality;
-  
   this.firstName = firstName;
   this.lastName = lastName;
   this.yearOfBirth = yearOfBirth;
   this.nationality = nationality;
-} 
+}
 
 //ES6
 
-function SmithPerson(firstName,yearOfBirth, lastName = "Smith", nationality = "american"){
+function SmithPerson(
+  firstName,
+  yearOfBirth,
+  lastName = "Smith",
+  nationality = "american"
+) {
   this.firstName = firstName;
   this.yearOfBirth = yearOfBirth;
   this.lastName = lastName;
   this.nationality = nationality;
 }
 
-var john = new SmithPerson('john', 1990);
+var john = new SmithPerson("john", 1990);
 
-var Eve = new SmithPerson('eve',1993, 'coisinha', 'americana')
+var Eve = new SmithPerson("eve", 1993, "coisinha", "americana");
 ```
+
 <h4>Maps</h4>
 
 Maps are iterable and we can use anything as keys.And it's easy to add or remove data from a property.
@@ -416,18 +426,18 @@ Maps are iterable and we can use anything as keys.And it's easy to add or remove
 ```javascript
 const question = new Map();
 question.set("question", "What is the official name of the latest JS version?");
-question.set(1,"ES5");
-question.set(2,"ES6")
-question.set(3,"ES7")
-question.set(4,"ES2015");
-question.set('correct', 3);
-question.set(true, 'You got it right');
+question.set(1, "ES5");
+question.set(2, "ES6");
+question.set(3, "ES7");
+question.set(4, "ES2015");
+question.set("correct", 3);
+question.set(true, "You got it right");
 question.set(false, "Wrong.try again");
 
-console.log(question.get('question'));
+console.log(question.get("question"));
 console.log(question.size);
 
-if(question.has(4)){
+if (question.has(4)) {
   //question.delete(4);
   console.log("You are here");
 }
@@ -436,13 +446,16 @@ if(question.has(4)){
 To `loop`thru a map we simply can do this:
 
 ```javascript
-question.forEach((value,key)=>
-console.log(`This is ${key} and is set to ${value}`));
+question.forEach((value, key) =>
+  console.log(`This is ${key} and is set to ${value}`)
+);
 ```
+
 Or
+
 ```javascript
-for (let[key, value] of question.entries()){
-  if(typeof(key)==='number'){
+for (let [key, value] of question.entries()) {
+  if (typeof key === "number") {
     console.log(`Answer ${key}:${value}`);
   }
 }
@@ -453,30 +466,69 @@ for (let[key, value] of question.entries()){
 //ES5
 
 ```javascript
-var Person5 = function(name, yearOfBirth, job){
+var Person5 = function(name, yearOfBirth, job) {
   this.name = name;
   this.yearOfBirth = yearOfBirth;
   this.job = job;
-}
+};
 
-Person5.prototype.calculateAge = function(){
+Person5.prototype.calculateAge = function() {
   var age = new Date().getfullYear - this.yearOfBirth;
   console.log(age);
-}
-var john5 = new Person5('John', 1990, 'teacher');
+};
+var john5 = new Person5("John", 1990, "teacher");
 
 //ES6
 
-class Person6{
-  constructor(name, yearOfBirth, job){
-    this.name= name;
+class Person6 {
+  constructor(name, yearOfBirth, job) {
+    this.name = name;
     this.yearOfBirth = yearOfBirth;
     this.job = job;
   }
-  calculateAge(){
-  var age = new Date().getfullYear - this.yearOfBirth;
-  console.log(age);
+  calculateAge() {
+    var age = new Date().getfullYear - this.yearOfBirth;
+    console.log(age);
   }
 }
+```
 
+<h2>Arrow Function</h2>
 
+`Arrow functions`is another way to declare and use functions.
+
+Lets´s look to the same code in ES5 and ES6:
+
+```javascript
+//ES5
+function double(x) {
+  return x * 2;
+}
+
+console.log(double(2));
+//4
+```
+
+```javascript
+//ES6
+const double = x => x * 2;
+consoloe.log(double(2));
+//4
+```
+
+<h4>Ternary Operator</h4>
+
+Similar to the logical operator but has 3 parts:
+
+<ol>
+  <li>The comparison, that will be true or false</li>
+  <li>The first return value if thuthy</li>
+  <li>The second return, if falsy</li>
+</ol>
+
+```javascript
+const  age = 38;
+console.log(age === 38 ? 'True' : 'False'// true
+console.log(age ? 'yes' : 'no') // yes
+console.log(age === 15 ? 'True'  : 'False') //false
+```
