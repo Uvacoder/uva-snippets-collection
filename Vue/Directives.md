@@ -1,0 +1,61 @@
+**Binding**
+
+```javascript
+new Vue({
+  el: "#app",
+  data: {
+    title: "Hello",
+    link: "https://google.com"
+  },
+  methods: {
+    myName: function() {
+      return "My name is Ricardo";
+    },
+    secondTitle: function() {
+      return this.title;
+    }
+  }
+});
+```
+
+```html
+<div id="app">
+  <p>{{ title }}</p>
+  <p>{{ myName() }} - <a v-bind:href="link">Google</a></p>
+  <p>{{ secondTitle() }}</p>
+</div>
+```
+
+We can't use curly brackets in any coded HTML atributte. So we have to use `v-directives`.
+
+**V-once**
+
+```javascript
+new Vue({
+  el: "#app",
+  data: {
+    title: "Hello",
+    link: "https://google.com"
+  },
+  methods: {
+    myName: function() {
+      return "My name is Ricardo";
+    },
+    secondTitle: function() {
+      this.title = "Ola";
+      return this.title;
+    }
+  }
+});
+```
+
+```html
+<div id="app">
+  <h1 v-once>{{ title }}</h1>
+  <p>{{ title }}</p>
+  <p>{{ myName() }} - <a v-bind:href="link">Google</a></p>
+  <p>{{ secondTitle() }}</p>
+</div>
+```
+
+With the `v-once` we can only render data once, where we set the directive.
