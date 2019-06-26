@@ -35,3 +35,16 @@ first();
 Allow Asynchronous function to run in the background. We pass in callbacks that run once the function has finished its work.
 
 The job of the `event loop` is monitor the `message queue`and the `execution stack` and push the `callback function` in line on the `execution stack`
+
+```javascript
+//Async Await
+const asyncGreeting = async() => 'Greetings';
+
+//Promises
+const promiseGreeting = () => new Promise(((resolve) =>{
+  resolve('Greetings);
+}))
+
+asyncGreeting().then(result =>console.log(result));
+promiseGreeting().then(result => console.log(result))
+```

@@ -9,6 +9,7 @@ Some ways to get understand the `this`in javascript.Can be determined using 4 ru
     <li>When the keyword <strong>this</strong> is used inside of a declared object, the value of <strong>this</strong> is set to the closest parent object the method is called on</li>
     <li>To explicitly use the value of the keyword `this, we can call `call`,
         `apply`or `bind`.</li>
+</ul>
 
 <h2>global</h2>
 
