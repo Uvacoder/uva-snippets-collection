@@ -8,6 +8,8 @@ Start your code with:
 })();
 ```
 
+With `strict` you can't use a `variable` without declaring it. Used by default when using `modules`.
+
 <h1>Variables</h1>
 
 We use them as symbolic name for value in a application.
@@ -32,6 +34,8 @@ console.log("John has" + a + " years);
 ```
 
 <h4>Reassign a var variable</h4>
+
+You should only declare the variable ( var, let, const) ONCE.
 
 ```javascript
 var password = "myname";
@@ -74,6 +78,9 @@ console.log(password); // yourname
 </table>
 
 There are two types of scope, the `global`and the `local`. The first is declared outside of a block and the last one inside of the block.
+`var`is a function scoped variable and `let`and `const` are block scope variables.
+
+Use `const`as deefault and `let` when you pretend to change the value.
 
 ```javascript
 var name = 'Ricardo'
