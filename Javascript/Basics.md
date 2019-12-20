@@ -137,3 +137,11 @@ If the first characther isn't a number, the minius or the plus sign, the `parseI
 <p><strong>parseFloar</strong></p>
 
 <p>It works like `parseInt`where looks at each caracter starting in position 0. Also continues to parse the string until it reaches the end of the string or a character that is invalid in a floation-point number.</p>
+
+String can work with Interpolation or concaetnation. First is variable inside a string while the last is two or more strings combined into one.
+
+Concatenation example
+
+```javascript
+const hello = `my name is &{name}`;
+```
