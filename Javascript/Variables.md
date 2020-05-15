@@ -80,7 +80,7 @@ console.log(password); // yourname
 There are two types of scope, the `global`and the `local`. The first is declared outside of a block and the last one inside of the block.
 `var`is a function scoped variable and `let`and `const` are block scope variables.
 
-Use `const`as deefault and `let` when you pretend to change the value.
+Use `const`as default and `let` when you pretend to change the value.
 
 ```javascript
 var name = 'Ricardo'
